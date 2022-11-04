@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<form>
+    {% for book in book_list %}
+    {{ book.book_name}}
+    {{ book.author_name }}
+    {{ book.book_id}}
+    <p>Price : {{ book.book_price}}</p>
+    <p>Discount : {{couponcode_obj.discount}} %</p>
+
+
+    <br>
+    <a href="/store/book/buy/{{book.id}}_{{couponcode_obj.id}}" target="_blank">This is a link</a>
+    
+    <br>
+
+    <ul>
+{% for key, value in choices.items %} 
+  <li>{{key}} - {{value}}</li>
+{% endfor %}
+</ul>
+{% endfor %}
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
